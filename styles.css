@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(135deg, #f4f4f9, #b0bec5);
     font-family: Arial, sans-serif;
 }
@@ -23,12 +23,12 @@ header {
 }
 
 header h1 {
-    font-size: 32px;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
 header p {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
 }
 
@@ -38,6 +38,7 @@ header p {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    padding: 20px;
 }
 
 /* Calculator Styling */
@@ -46,7 +47,8 @@ header p {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    width: 320px;
+    width: 100%;
+    max-width: 320px; /* Maintain max-width for larger screens */
     transition: transform 0.3s;
 }
 
@@ -59,7 +61,7 @@ header p {
     height: 60px;
     background-color: #1c2530;
     color: #fff;
-    font-size: 30px;
+    font-size: 1.5rem;
     text-align: right;
     padding: 15px;
     border: none;
@@ -68,6 +70,7 @@ header p {
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Buttons Styling */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -75,11 +78,11 @@ header p {
 }
 
 button {
-    background-color: #ddf00f;
-    color: #060606;
+    background-color: #f7f30a;
+    color: #060000;
     border: none;
-    padding: 20px;
-    font-size: 20px;
+    padding: 15px;
+    font-size: 1.2rem;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
@@ -87,12 +90,12 @@ button {
 }
 
 button:hover {
-    background-color: #ec8b02;
+    background-color: #f17108;
     transform: translateY(-5px);
 }
 
 button:active {
-    background-color: #42cd1f;
+    background-color: #eff6e9;
     transform: translateY(0);
 }
 
@@ -122,6 +125,60 @@ footer {
 }
 
 footer p {
-    font-size: 14px;
+    font-size: 0.9rem;
     margin: 5px 0;
+}
+
+/* Responsive Design - Media Queries */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .calculator {
+        padding: 15px;
+        width: 90%;
+    }
+
+    #display {
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    .calculator {
+        padding: 10px;
+    }
+
+    #display {
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
 }
